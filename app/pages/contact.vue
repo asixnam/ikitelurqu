@@ -1,12 +1,6 @@
-<script setup lang="ts">
-import HomeOutlate from '~/components/HomeOutlate.vue';
-
-</script>
-
 <template>
-  <div class="page-outlet">
-    <!-- Using HomeContact as it contains the outlet/market info -->
-    <HomeOutlate />
+  <div class="page-contact">
+    <AppContact />
     
     <!-- Maybe re-use hero or just simple header if original had one? 
          Original outlet.html likely just had the outlet list. 
@@ -14,3 +8,7 @@ import HomeOutlate from '~/components/HomeOutlate.vue';
     -->
   </div>
 </template>
+
+<script setup>
+// AppContact is auto-imported
+</script>

@@ -4,5 +4,6 @@
     <HomeProfil />
     <HomeKandungan />
     <HomeLegalitas />
+    <AppContact />
   </div>
 </template>

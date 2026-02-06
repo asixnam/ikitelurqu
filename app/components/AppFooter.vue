@@ -9,6 +9,7 @@
                    <li><NuxtLink to="/">Beranda</NuxtLink></li>
                    <li><NuxtLink to="/profil">Detail Produk</NuxtLink></li>
                    <li><NuxtLink to="/outlet">Outlet</NuxtLink></li>
+                   <li><NuxtLink to="/blog">Blog</NuxtLink></li>
                 </ul>
              </div>
              <p class="copyright visible-xs text-center">&copy; 2026 Iki TelurQu</p>
@@ -34,7 +35,7 @@
 .contac_footer {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: var(--color-blue); /* #1643A0 */
+  background-color: #FFC300;
   color: white;
 }
 

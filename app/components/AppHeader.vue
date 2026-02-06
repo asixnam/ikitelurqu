@@ -16,6 +16,8 @@
           <li><NuxtLink to="/" class="nav-item" active-class="active">Beranda</NuxtLink></li>
           <li><NuxtLink to="/profil" class="nav-item" active-class="active">Detail Produk</NuxtLink></li>
           <li><NuxtLink to="/outlet" class="nav-item" active-class="active">Outlet</NuxtLink></li>
+          <li><NuxtLink to="/contact" class="nav-item" active-class="active">Contact</NuxtLink></li>
+          <li><NuxtLink to="/blog" class="nav-item" active-class="active">Blog</NuxtLink></li>
         </ul>
       </nav>
 
@@ -41,6 +43,8 @@
             <NuxtLink to="/" class="mobile-link" @click="isMenuOpen = false">Beranda</NuxtLink>
             <NuxtLink to="/profil" class="mobile-link" @click="isMenuOpen = false">Detail Produk</NuxtLink>
             <NuxtLink to="/outlet" class="mobile-link" @click="isMenuOpen = false">Outlet</NuxtLink>
+            <NuxtLink to="/contact" class="mobile-link" @click="isMenuOpen = false">Contact</NuxtLink>
+            <NuxtLink to="/blog" class="mobile-link" @click="isMenuOpen = false">Blog</NuxtLink>
          </div>
       </div>
     </div>
@@ -100,7 +104,7 @@ const toggleMenu = () => isMenuOpen.value = !isMenuOpen.value
   position: relative;
   bottom: auto;
   left: auto;
-  width: 500px; /* Horizontal length */
+  width: 300px; /* Horizontal length */
   height: 2px; /* Thickness */
   background-color: var(--color-blue);
   border-radius: 2px; /* Rounded ends */
@@ -119,7 +123,7 @@ const toggleMenu = () => isMenuOpen.value = !isMenuOpen.value
 .nav-item {
   font-family: var(--font-baloo);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
   color: var(--color-blue);
   text-decoration: none;
   padding: 5px 0;
