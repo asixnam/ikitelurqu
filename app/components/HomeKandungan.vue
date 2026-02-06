@@ -9,13 +9,13 @@
        <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
              <div class="img_anak_anak">
-                <img src="https://ikitelurqu.com/asset_front/img/anak_ikitelurqu.png" class="img-responsive" alt="Image">
+                <img src="/anak_ikitelurqu.png" class="img-responsive" alt="Image">
              </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
              <div class="deskripsi_kandungan">
-                <p>Salah satu manfaat telur puyuh yang jarang diketahui adalah mencegah stunting pada anak...</p>
-                <p>Iki TelurQu alternatif jajanan sehat dan mengenyangkan...</p>
+                <p>Salah satu manfaat telur puyuh yang jarang diketahui adalah mencegah stunting pada anak. Stunting adalah kondisi di mana pertumbuhan anak terhambat akibat kurang gizi kronis. Stunting dapat menyebabkan gangguan kognitif, fisik, dan imunitas pada anak. Telur puyuh dapat mencegah stunting karena kandungan protein dan lemaknya yang cukup tinggi. Protein dan lemak dapat membantu pertumbuhan sel dan jaringan tubuh, serta memenuhi kebutuhan energi anak.</p>
+                <p>Iki TelurQu alternatif jajanan sehat dan mengenyangkan, terbuat dari 100% telur puyuh pilihan, tinggi zat besi dan protein yang dibutuhkan anak-anak di masa pertumbuhan. Iki TelurQu juga dapat dijadikan lauk untuk bekal makan siang di sekolah.</p>
 
                 <h4>Kandungan gizi telur puyuh lebih tinggi dibanding telur ayam ras*</h4>
                 <div class="list_kandungan">
@@ -54,21 +54,21 @@
   margin: 0px;
   color: var(--color-blue);
   font-family: var(--font-baloo);
-  font-weight: 700;
+  font-weight: 100;
   font-size: 40px;
 }
 
 .deskripsi_kandungan p {
   text-align: justify;
   font-family: var(--font-barlow);
-  padding-bottom: 20px;
-  font-size: 18px;
+  padding-bottom: 5px; /* Reduced from 20px */
+  font-size: 14px;
 }
 
 .deskripsi_kandungan h4 {
   color: var(--color-red);
   font-family: var(--font-baloo);
-  font-weight: 700;
+  font-weight: 10;
   font-size: 24px;
 }
 
@@ -83,7 +83,7 @@
 .custom_text_kandungan {
   background-color: var(--color-red);
   padding: 5px 15px;
-  border-radius: 30px; /* Approximation */
+  border-radius: 5px; /* Reduced from 30px */
   display: inline-block;
 }
 

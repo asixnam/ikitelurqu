@@ -64,9 +64,9 @@ const list = [
 <style scoped>
 .latarbelakang {
   padding-top: 100px; /* Compensate for the overlap so content doesn't hit cards */
-  padding-bottom: 120px;
+  padding-bottom: 60px; /* Reduced from 120px */
   background-color: var(--color-blue);
-  margin-top: -70px; /* Pull UP to sit halfway under Legalitas cards (height 140px) */
+  margin-top: -80px; /* Pull UP to sit halfway under Legalitas cards (height 140px) */
   position: relative;
   z-index: 1;
 }
@@ -88,20 +88,20 @@ const list = [
   font-weight: 800;
   font-size: 40px;
   line-height: 1.2;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .box_list_latarbelakang .list_img img {
   width: auto;
-  height: 80px; /* Increased from 50px */
-  margin-bottom: 20px;
+  height: 50px; /* Increased from 50px */
+  margin-bottom: 30x;
 }
 
 .box_list_latarbelakang h4 {
   color: var(--color-gold);
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .box_list_latarbelakang p {
@@ -112,7 +112,7 @@ const list = [
 }
 
 .btn_keunggulan {
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 .btn-danger {
@@ -127,7 +127,7 @@ const list = [
 }
 
 .mb-30 {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 992px) {
