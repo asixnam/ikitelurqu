@@ -4,7 +4,7 @@
        <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
              <div class="img_keluarga_ikitelurqu">
-                <img src="https://ikitelurqu.com/asset_front/img/keluarga_ikitelurqu.png" class="img-responsive" alt="Image">
+                <img src="/keluarga_ikitelurqu.png" class="img-responsive" alt="Image">
              </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -41,31 +41,34 @@ const list = [
   {
     title: 'Praktis & higienis',
     desc: 'Bahan kemasan Alumunium Retort tebal dan kedap udara untuk menjamin keamanan produk. Desain apik dan mudah dibawa kemanapun.',
-    img: 'https://ikitelurqu.com/asset_front/img/ico_1.png'
+    img: '/icon/ico_1.png'
   },
   {
     title: 'Enak & bergizi',
     desc: 'Terbuat dari 100% telur puyuh, Iki TelurQu tinggi protein. Hadir dengan rasa Bacem khas Jogja yang bikin kangen.',
-    img: 'https://ikitelurqu.com/asset_front/img/ico_2.png'
+    img: '/icon/ico_2.png'
   },
   {
     title: 'Tanpa pengawet',
     desc: 'Proses sterilisasi teknologi Retort memperpanjang masa simpan sampai 3 bulan (atau 1 tahun) tanpa bahan pengawet.',
-    img: 'https://ikitelurqu.com/asset_front/img/ico_3.png'
+    img: '/icon/ico_3.png'
   },
   {
     title: 'Penyimpanan mudah',
     desc: 'Dapat disimpan di suhu ruang, tidak perlu di kulkas. Mudah disusun dan tampilan menarik.',
-    img: 'https://ikitelurqu.com/asset_front/img/ico_4.png'
+    img: '/icon/ico_4.png'
   }
 ]
 </script>
 
 <style scoped>
 .latarbelakang {
-  padding-top: 120px;
+  padding-top: 100px; /* Compensate for the overlap so content doesn't hit cards */
   padding-bottom: 120px;
-  background-color: var(--color-blue); /* #1643A0 */
+  background-color: var(--color-blue);
+  margin-top: -70px; /* Pull UP to sit halfway under Legalitas cards (height 140px) */
+  position: relative;
+  z-index: 1;
 }
 
 .img_keluarga_ikitelurqu {
@@ -90,8 +93,8 @@ const list = [
 
 .box_list_latarbelakang .list_img img {
   width: auto;
-  height: 50px;
-  margin-bottom: 15px;
+  height: 80px; /* Increased from 50px */
+  margin-bottom: 20px;
 }
 
 .box_list_latarbelakang h4 {
