@@ -41,7 +41,7 @@
     </div>
 
     <!-- Mobile Bottom Navigation -->
-    <div class="mobile-bottom-nav visible-xs visible-sm">
+    <div class="mobile-bottom-nav">
         <NuxtLink to="/" class="nav-item">
            <i class="glyphicon glyphicon-home"></i>
            <span>Beranda</span>
@@ -50,14 +50,20 @@
            <i class="glyphicon glyphicon-th-large"></i>
            <span>Produk</span>
         </NuxtLink>
-        <div class="nav-item">
-             <a href="https://api.whatsapp.com/send?phone=6281332614978" target="_blank" class="order-btn">
-                <i class="glyphicon glyphicon-shopping-bag"></i> <!-- Changed to bag to match image -->
+        
+        <div class="nav-item center-item">
+             <a href="https://api.whatsapp.com/send?phone=6281332614978" target="_blank" class="order-fab">
+                <i class="glyphicon glyphicon-shopping-cart"></i>
              </a>
         </div>
+
         <NuxtLink to="/outlet" class="nav-item">
            <i class="glyphicon glyphicon-map-marker"></i>
            <span>Outlet</span>
+        </NuxtLink>
+        <NuxtLink to="/profil" class="nav-item">
+           <i class="glyphicon glyphicon-user"></i>
+           <span>Profil</span>
         </NuxtLink>
     </div>
 </header>
@@ -226,85 +232,104 @@ onUnmounted(() => {
   font-size: 18px;
 }
 
-/* Bottom Navigation (Mobile - Image Match) */
+/* Bottom Navigation (Mobile - Refined) */
 .mobile-bottom-nav {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   background: #ffffff;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-  display: flex;
-  justify-content: space-between;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  display: none; /* Hidden on desktop by default */
+  justify-content: space-around; /* Distribute space evenly */
   align-items: center;
-  padding: 0; /* Remove padding for dividers to touch edges */
-  height: 70px; /* Fixed height */
+  padding: 0 10px;
+  height: 65px; /* Standard visible height */
   z-index: 1002;
-  border-radius: 25px 25px 0 0; /* Rounded top like image */
+  border-top: 1px solid #f0f0f0;
 }
 
 .nav-item {
   display: flex;
+  flex-direction: column; /* Stack icon and text */
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #fbaf02; /* Match the yellow/orange icon color from image */
+  color: #fbaf02; /* Gold color */
   font-family: var(--font-poppins);
   transition: all 0.3s;
   flex: 1;
-  height: 100%;
+  height: 60%;
   background: none;
   border: none;
-  border-right: 1px solid #f0f0f0; /* Vertical divider */
   margin: 0;
-  padding: 0;
-}
-
-.nav-item:last-child {
-  border-right: none;
+  padding: 5px 0 0;
+  position: relative;
 }
 
 .nav-item span {
-  display: none; /* Hide text as per image */
+  display: block; /* Show text */
+  font-size: 10px;
+  margin-top: 2px;
+  font-weight: 500;
 }
 
 .nav-item i {
-  font-size: 24px;
-  color: #fbaf02; /* Explicit yellow/orange */
+  font-size: 16px;
+  color: #fbaf02; /* Gold color */
   transition: all 0.3s;
+  margin-bottom: 2px;
+}
+
+.nav-item:hover,
+.nav-item.router-link-active {
+  color: var(--theme-color);
+  text-decoration: none;
 }
 
 .nav-item:hover i,
 .nav-item.router-link-active i {
-  color: var(--theme-color); /* Darker orange on active/hover */
-  transform: scale(1.1);
+  color: var(--theme-color);
+  transform: translateY(-2px);
 }
 
-/* Center Item Adjustment */
+/* Center Floating Action Button (FAB) */
 .center-item {
+  position: relative;
+  /* top: -20px;  Pull it up */
+  overflow: visible;
+  flex: 0 0 70px; /* Fixed width for the center area */
+}
+
+.order-fab {
+  width: 60px;
+  height: 60px;
+  background: #fbaf02; /* Gold color */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  color: #fff;
+  font-size: 24px; /* Icon size */
+  box-shadow: 0 4px 10px rgba(251, 175, 2, 0.4);
+  position: absolute;
+  bottom: 15px; /* Float above bar */
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid #fff; /* White ring to separate from bar content visually if needed, or just style */
+  z-index: 1003;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.order-btn {
-  /* Resetting order btn to look like a normal icon in this layout if desired, 
-     OR keeping it distinct. The image shows standard icons. 
-     I will make it blend in as an icon for consistency with the "row of icons" look. 
-  */
-  width: auto;
-  height: auto;
-  background: none;
-  box-shadow: none;
-  border: none;
-  color: #fbaf02;
+.order-fab:hover {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 6px 15px rgba(251, 175, 2, 0.5);
+  color: #fff;
 }
 
-.order-btn i {
+.order-fab i {
+  color: #fff;
   font-size: 24px;
-  color: #fbaf02;
 }
 
 
@@ -402,6 +427,10 @@ onUnmounted(() => {
   
   :global(body) {
       padding-bottom: 70px; /* Prevent content from being hidden behind bottom nav */
+  }
+
+  .mobile-bottom-nav {
+      display: flex; /* Show only on mobile/tablet */
   }
 }
 </style>
