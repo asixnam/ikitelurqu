@@ -1,12 +1,6 @@
 <template>
   <div class="kontak_market section-padding bg-light">
     <div class="container">
-       <div class="section-title text-center mb-50">
-          <span class="sub-title">Mudah Didapat</span>
-          <h2>Dapatkan di Toko Langgananmu</h2>
-          <p class="section-desc">Tersedia secara online maupun offline di berbagai supermarket dan toko oleh-oleh.</p>
-       </div>
-
        <div class="list_market mb-50">
           <h4 class="text-center mb-30">Toko Online</h4>
           <div class="row market-grid">
