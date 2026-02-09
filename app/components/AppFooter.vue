@@ -5,7 +5,7 @@
           <div class="footer-top section-padding">
              <div class="row">
                 <!-- Column 1: Logo -->
-                <div class="col-md-3 col-sm-4 mb-50">
+                <div class="col-md-3 col-sm-4 mb-50 mobile-center">
                    <div class="footer-logo">
                       <NuxtLink to="/"><img src="/logo.png" alt="Iki TelurQu" class="img-responsive"></NuxtLink>
                    </div>
@@ -15,7 +15,7 @@
                 </div>
 
                 <!-- Column 2: Navigation -->
-                <div class="col-md-3 col-sm-4 mb-50">
+                <div class="col-md-3 col-sm-4 mb-50 hidden-xs">
                    <div class="footer-widget">
                       <h4>Navigation</h4>
                       <ul>
@@ -28,7 +28,7 @@
                 </div>
 
                 <!-- Column 3: Produk -->
-                <div class="col-md-3 col-sm-4 mb-50">
+                <div class="col-md-3 col-sm-4 mb-50 hidden-xs">
                    <div class="footer-widget">
                       <h4>Produk</h4>
                       <ul>
@@ -41,7 +41,7 @@
                 </div>
 
                 <!-- Column 4: Contact -->
-                <div class="col-md-3 col-sm-4 mb-50">
+                <div class="col-md-3 col-sm-4 mb-50 mobile-center">
                    <div class="footer-widget">
                       <h4>Contact Person</h4>
                       <ul>
@@ -120,5 +120,24 @@
 
 .mb-50 {
   margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+  .mobile-center {
+    text-align: center;
+  }
+  
+  .footer-logo img {
+    margin: 0 auto;
+  }
+  
+  .footer-widget h4:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .mb-50 {
+    margin-bottom: 30px; /* Reduce margin on mobile */
+  }
 }
 </style>
