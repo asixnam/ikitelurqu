@@ -1,29 +1,32 @@
 <template>
-  <div class="produksi">
+  <div class="produksi section-padding bg-gray">
     <div class="container">
-       <div class="title_produksi">
-          <h3>Pengolahan modern</h3>
-          <h2>Diolah secara modern & Otomatis</h2>
+       <div class="section-title text-center mb-50">
+          <span class="sub-title">Pengolahan modern</span>
+          <h2>Diolah secara Modern & Otomatis</h2>
+          <p class="section-desc">Proses produksi yang higienis dan modern menjamin kualitas terbaik untuk Anda.</p>
        </div>
        
        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 mb-30">
-             <div class="box_img_produksi">
-                <div class="video_produksi">
-                    <!-- Placeholder video/image -->
-                    <div style="background:#000; height: 300px; width:100%; display:flex; align-items:center; justify-content:center; color:white;">VIDEO</div>
+          <!-- Video Section -->
+          <div class="col-md-3 col-sm-6 mb-30">
+             <div class="process-card video-card">
+                <div class="video-wrapper">
+                    <img src="https://ikitelurqu.com/asset_front/img/pabrik_ikitelurqu.mp4" alt="Video Placeholder" class="img-responsive video-thumb">
+                    <div class="play-btn"><i class="glyphicon glyphicon-play"></i></div>
                 </div>
              </div>
           </div>
 
-          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 mb-30" v-for="(item, i) in steps" :key="i">
-             <div class="box_img_produksi">
-                <div class="img_produksi">
+          <!-- Process Steps -->
+          <div class="col-md-3 col-sm-6 mb-30" v-for="(item, i) in steps" :key="i">
+             <div class="process-card">
+                <div class="card-img">
                    <img :src="item.img" class="img-responsive" alt="Image">
                 </div>
-                <div class="text_deskripsi_produksi">
+                <div class="card-content">
                    <h3>{{ item.title }}</h3>
-                   <span><hr></span>
+                   <div class="divider"></div>
                    <p>{{ item.desc }}</p>
                 </div>
              </div>
@@ -36,75 +39,130 @@
 <script setup lang="ts">
 const steps = [
   {
-    title: 'Proses Rebus memakai mesin Otomatis',
-    desc: 'Tahapan proses perebusan dengan suhu dan waktu yang tepat...',
+    title: 'Rebus Otomatis',
+    desc: 'Tahapan proses perebusan dengan suhu dan waktu yang tepat untuk kematangan sempurna.',
     img: 'https://ikitelurqu.com/asset_front/img/produksi_perebusan_otomatis.png'
   },
   {
-    title: 'Proses Kupas memakai mesin Otomatis',
-    desc: 'Untuk mengurangi kerusakan pada telur, proses kupas telur puyuh telah memakai mesin otomatis...',
+    title: 'Kupas Otomatis',
+    desc: 'Menggunakan mesin otomatis agar telur kupas lebih bersih, halus, dan higienis.',
     img: 'https://ikitelurqu.com/asset_front/img/produksi_kupas_otomatis.png'
   },
   {
-    title: 'Sterilisasi Retort suhu tinggi produk awet',
-    desc: 'Proses sterilisasi dengan teknologi Retort menggunakan panas pada suhu tinggi...',
+    title: 'Sterilisasi Retort',
+    desc: 'Pemanasan suhu tinggi membunuh bakteri sehingga produk awet tanpa pengawet.',
     img: 'https://ikitelurqu.com/asset_front/img/produksi_sterilisasi_retort.png'
   }
 ]
 </script>
 
 <style scoped>
-.produksi {
-  padding-top: 100px;
-  padding-bottom: 100px;
+.bg-gray {
+  background-color: var(--bg-gray);
 }
 
-.title_produksi {
-  padding-bottom: 60px;
-  text-align: center;
+.sub-title {
+  color: var(--theme-color);
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.title_produksi h3 {
-  margin: 0px;
-  color: var(--color-grey);
-}
-
-.title_produksi h2 {
-  color: var(--color-blue);
-  font-family: var(--font-baloo);
+.section-title h2 {
+  font-size: 36px;
+  color: var(--heading-color);
   font-weight: 700;
+}
+
+.section-desc {
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.box_img_produksi {
+.process-card {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.card-img {
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-img img {
   width: 100%;
-  background-color: #FFF;
-  box-shadow: -1px 8px 12px -4px rgba(105, 105, 105, 0.2);
-  min-height: 450px;
+  transition: transform 0.5s;
 }
 
-.text_deskripsi_produksi {
-  padding: 15px 15px 45px 15px;
+.process-card:hover .card-img img {
+  transform: scale(1.05);
 }
 
-.text_deskripsi_produksi h3 {
-  font-family: var(--font-baloo);
-  font-weight: 700;
+.card-content {
+  padding: 25px;
+}
+
+.card-content h3 {
   font-size: 20px;
-  color: var(--color-grey);
-  min-height: 60px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--heading-color);
 }
 
-.text_deskripsi_produksi span hr {
-  border-top: 1px solid #5A5958;
-  margin: 10px 0;
+.divider {
+  width: 50px;
+  height: 2px;
+  background: var(--theme-color);
+  margin-bottom: 15px;
 }
 
-.text_deskripsi_produksi p {
-  text-align: justify;
-  font-family: var(--font-barlow);
-  font-size: 14px;
+.card-content p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
 }
 
-.mb-30 { margin-bottom: 30px; }
+.video-wrapper {
+  position: relative;
+  height: 100%;
+  min-height: 350px; /* Adjust as needed */
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-btn {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s;
+}
+
+.play-btn:hover {
+  background: var(--theme-color);
+  color: #fff;
+}
+
+.glyphicon-play {
+  font-size: 24px;
+}
 </style>

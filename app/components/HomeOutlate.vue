@@ -1,38 +1,35 @@
 <template>
-  <div class="kontak_market">
+  <div class="kontak_market section-padding bg-light">
     <div class="container">
-       <div class="title_kontak_market">
-          <h3>Iki TelurQu semakin mudah didapat</h3>
-          <h2>Dapat diborong di toko langgananmu</h2>
+       <div class="section-title text-center mb-50">
+          <span class="sub-title">Mudah Didapat</span>
+          <h2>Dapatkan di Toko Langgananmu</h2>
+          <p class="section-desc">Tersedia secara online maupun offline di berbagai supermarket dan toko oleh-oleh.</p>
        </div>
 
-       <div class="list_market">
-          <h4>Toko Online <span>(klik logo untuk membeli)</span></h4>
-          <div class="row">
-             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 mb-20" v-for="(shop, i) in onlineShops" :key="i">
-                <a :href="shop.url" target="_blank">
-                   <div class="box_kontak_market">
-                      <img :src="shop.img" class="img-responsive" alt="Image">
-                   </div>
+       <div class="list_market mb-50">
+          <h4 class="text-center mb-30">Toko Online</h4>
+          <div class="row market-grid">
+             <div class="col-xs-6 col-sm-3 mb-20" v-for="(shop, i) in onlineShops" :key="i">
+                <a :href="shop.url" target="_blank" class="market-box">
+                   <img :src="shop.img" class="img-responsive" :alt="shop.name">
                 </a>
              </div>
           </div>
        </div>
 
        <div class="list_swalayan">
-           <h4>Supermarket, Swalayan & Toko Oleh-oleh :</h4>
-           <div class="row">
-               <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3 mb-20" v-for="(item, i) in swalayan" :key="i">
-                  <a href="/outlet">
-                     <div class="box_kontak_market">
-                        <img :src="item.img" class="img-responsive" alt="Image">
-                     </div>
-                  </a>
+           <h4 class="text-center mb-30">Supermarket & Toko Oleh-oleh</h4>
+           <div class="row market-grid">
+               <div class="col-xs-4 col-sm-3 mb-20" v-for="(item, i) in swalayan" :key="i">
+                  <div class="market-box small">
+                     <img :src="item.img" class="img-responsive" alt="Outlet Partner">
+                  </div>
                </div>
            </div>
            
-           <div class="btn_market text-center" style="margin-top: 30px;">
-              <a href="/outlet" class="btn btn-danger btn-md">Lihat lokasi outlet</a>
+           <div class="text-center mt-40">
+              <NuxtLink to="/outlet" class="btn-theme">Lihat Lokasi Outlet</NuxtLink>
            </div>
        </div>
     </div>
@@ -41,10 +38,10 @@
 
 <script setup lang="ts">
 const onlineShops = [
-    { url: 'https://shopee.co.id/ikienak', img: 'https://ikitelurqu.com/asset_front/img/produk/store_shopee.png' },
-    { url: 'https://www.tokopedia.com/keripikpuyuh', img: 'https://ikitelurqu.com/asset_front/img/produk/store_tokped.png' },
-    { url: 'https://www.tiktok.com/@ikitelurqu', img: 'https://ikitelurqu.com/asset_front/img/produk/store_tiktok.png' },
-    { url: 'https://api.whatsapp.com/send?phone=6282190000716&text=Hallo%20Admin%20IkiTelurQu', img: 'https://ikitelurqu.com/asset_front/img/produk/store_whatsapp.png' }
+    { name: 'Shopee', url: 'https://shopee.co.id/ikienak', img: 'https://ikitelurqu.com/asset_front/img/produk/store_shopee.png' },
+    { name: 'Tokopedia', url: 'https://www.tokopedia.com/keripikpuyuh', img: 'https://ikitelurqu.com/asset_front/img/produk/store_tokped.png' },
+    { name: 'TikTok Shop', url: 'https://www.tiktok.com/@ikitelurqu', img: 'https://ikitelurqu.com/asset_front/img/produk/store_tiktok.png' },
+    { name: 'WhatsApp', url: 'https://api.whatsapp.com/send?phone=6282190000716', img: 'https://ikitelurqu.com/asset_front/img/produk/store_whatsapp.png' }
 ]
 
 const swalayan = [
@@ -55,57 +52,72 @@ const swalayan = [
     { img: 'https://ikitelurqu.com/asset_front/img/market/purnama.png' },
     { img: 'https://ikitelurqu.com/asset_front/img/market/januputra.png' },
     { img: 'https://ikitelurqu.com/asset_front/img/market/mulia_toserba_bantul.png' },
-    { img: 'https://ikitelurqu.com/asset_front/img/market/plaza_argo.png' },
-    { img: 'https://ikitelurqu.com/asset_front/img/market/bakpia_mutiara_jogja.png' },
-    { img: 'https://ikitelurqu.com/asset_front/img/market/rs_panti_rapih.png' },
-    { img: 'https://ikitelurqu.com/asset_front/img/market/rsa_ugm.png' },
-    { img: 'https://ikitelurqu.com/asset_front/img/market/rsiy_pdhi.png' },
-    { img: 'https://ikitelurqu.com/asset_front/img/market/budi_mulia_dua.png' },
-    { img: 'https://ikitelurqu.com/asset_front/img/market/islamic_school.png' },
-    { img: 'https://ikitelurqu.com/asset_front/img/market/fawwaz.png' },
-    { img: 'https://ikitelurqu.com/asset_front/img/market/oddish.png' }
+    { img: 'https://ikitelurqu.com/asset_front/img/market/plaza_argo.png' }
 ]
 </script>
 
 <style scoped>
-.kontak_market {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  background-color: var(--color-bg-light);
+.bg-light {
+  background-color: #f9f9f9;
 }
 
-.title_kontak_market {
-  padding-bottom: 60px;
-  text-align: center;
+.sub-title {
+  color: var(--theme-color);
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.title_kontak_market h3 { margin: 0; color: var(--color-grey); }
-.title_kontak_market h2 { margin: 0; color: var(--color-blue); font-family: var(--font-baloo); font-weight: 700; }
+.section-title h2 {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--heading-color);
+  margin-top: 5px;
+}
 
-.list_market h4 { text-align: center; margin-bottom: 30px; }
-.list_market h4 span { color: var(--color-red); }
+h4 {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  color: var(--heading-color);
+}
 
-.box_kontak_market {
-  width: 100%;
-  background: white;
-  box-shadow: -1px 8px 12px -4px rgba(105,105,105,0.2);
-  padding: 10px;
-  height: 100px;
-  border-radius: 10px;
+.market-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: background 0.2s;
+  justify-content: center;
+  height: 100px; /* Fixed height for consistency */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 
-.box_kontak_market:hover {
-    background-color: var(--color-bg-light);
+.market-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.box_kontak_market img {
-    max-height: 100%;
-    max-width: 100%;
+.market-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
+.market-box.small {
+  height: 80px;
+  padding: 10px;
+}
+
+.btn-theme {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.mt-40 { margin-top: 40px; }
 .mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mb-50 { margin-bottom: 50px; }
 </style>

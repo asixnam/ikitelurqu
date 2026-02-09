@@ -1,24 +1,23 @@
 <template>
-  <div class="testimoni">
+  <div class="testimoni section-padding bg-gray">
      <div class="container">
-        <div class="title_testimoni">
-           <h3>Penilaian customer kami</h3>
-           <h2>Testimoni Iki TelurQu</h2>
-           <div class="star">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        <div class="section-title text-center mb-50">
+           <span class="sub-title">Kata Mereka</span>
+           <h2>Testimoni Pelanggan</h2>
+           <div class="star-rating mt-20">
+              <i class="glyphicon glyphicon-star"></i>
+              <i class="glyphicon glyphicon-star"></i>
+              <i class="glyphicon glyphicon-star"></i>
+              <i class="glyphicon glyphicon-star"></i>
+              <i class="glyphicon glyphicon-star"></i>
            </div>
         </div>
 
-        <div class="side-testimoni row">
-            <!-- Simplified grid without carousel JS for now, or nice flex scroll -->
-           <div class="col-md-3 col-sm-6 mb-20" v-for="(img, i) in testimoniImgs" :key="i">
-              <div class="card-content">
-                 <div class="img_testimoni">
-                    <img :src="img" alt="" class="img-responsive">
+        <div class="row">
+           <div class="col-md-3 col-sm-6 mb-30" v-for="(img, i) in testimoniImgs" :key="i">
+              <div class="testimoni-card">
+                 <div class="card-img">
+                    <img :src="img" alt="Testimoni Customer" class="img-responsive">
                  </div>
               </div>
            </div>
@@ -37,37 +36,55 @@ const testimoniImgs = [
 </script>
 
 <style scoped>
-.testimoni {
-  padding-top: 100px;
-  padding-bottom: 100px;
+.bg-gray {
+  background-color: var(--bg-gray);
 }
 
-.title_testimoni {
-  padding-bottom: 60px;
-  text-align: center;
+.sub-title {
+  color: var(--theme-color);
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.title_testimoni h3 { margin: 0; color: var(--color-grey); }
-.title_testimoni h2 { 
-  margin: 0; 
-  color: var(--color-blue); 
-  font-family: var(--font-baloo); 
-  font-weight: 700; 
-  font-size: 40px;
+.section-title h2 {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--heading-color);
+  margin-top: 5px;
 }
 
-.star .glyphicon-star {
-  color: var(--color-gold);
+.star-rating {
+  color: #ffc107;
   font-size: 20px;
+}
+
+.star-rating i {
   margin: 0 2px;
 }
 
-.card-content {
-  padding: 10px;
+.testimoni-card {
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  height: 100%;
 }
 
-.mb-20 { margin-bottom: 20px; }
+.testimoni-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mb-30 { margin-bottom: 30px; }
+.mt-20 { margin-top: 20px; }
 </style>

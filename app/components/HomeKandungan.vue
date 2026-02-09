@@ -37,7 +37,7 @@
 .kandungan {
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color: var(--color-bg-light); /* #F5F5FA */
+  background-color: var(--color-bg-light); /* Keep light bg or use #f9f9f9 */
 }
 
 .title_kandungan {
@@ -46,49 +46,84 @@
 }
 
 .title_kandungan h3 {
-  margin: 0px;
-  color: var(--color-grey);
+  margin: 0px 0 10px;
+  color: var(--theme-color); /* Orange */
+  font-family: var(--font-josefin);
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .title_kandungan h2 {
   margin: 0px;
-  color: var(--color-blue);
-  font-family: var(--font-baloo);
-  font-weight: 100;
+  color: var(--heading-color); /* Dark Blue */
+  font-family: var(--font-poppins);
+  font-weight: 700;
   font-size: 40px;
 }
 
 .deskripsi_kandungan p {
   text-align: justify;
-  font-family: var(--font-barlow);
-  padding-bottom: 5px; /* Reduced from 20px */
-  font-size: 14px;
+  font-family: var(--font-poppins);
+  padding-bottom: 15px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-color);
+  font-weight: 400;
 }
 
 .deskripsi_kandungan h4 {
-  color: var(--color-red);
-  font-family: var(--font-baloo);
-  font-weight: 10;
-  font-size: 24px;
+  color: var(--theme-color); /* Red -> Orange/Theme */
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.list_kandungan ul {
+  padding-left: 0;
+  list-style: none;
 }
 
 .list_kandungan ul li {
   color: #FFF;
-  margin-top: 10px;
-  font-size: 24px;
-  font-family: var(--font-baloo);
-  font-weight: 600;
+  margin-top: 15px;
+  font-size: 16px;
+  font-family: var(--font-poppins);
+  font-weight: 500;
 }
 
 .custom_text_kandungan {
-  background-color: var(--color-red);
-  padding: 5px 15px;
-  border-radius: 5px; /* Reduced from 30px */
+  background-color: var(--theme-color); /* Red -> Orange */
+  padding: 8px 15px;
+  border-radius: 50px; /* Pill shape */
   display: inline-block;
+  box-shadow: 0 4px 10px rgba(255, 86, 0, 0.2);
 }
 
 .normal_text {
   font-weight: 400;
   font-size: 0.9em;
+  opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+  .kandungan {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .title_kandungan h2 {
+    font-size: 28px;
+  }
+  .title_kandungan h3 {
+    font-size: 16px;
+  }
+  .img_anak_anak {
+    margin-bottom: 30px;
+    text-align: center;
+  }
 }
 </style>

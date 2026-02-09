@@ -46,17 +46,16 @@
 /* Image Section Styling */
 .image-section {
   position: relative;
-  min-height: 600px;
+  min-height: 500px; /* Adjusted */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -140px; /* Pull image upwards as requested */
 }
 
 .image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 650px; /* Increased from 500px */
+  max-width: 550px;
   display: flex;
   justify-content: center;
 }
@@ -65,62 +64,68 @@
 .main-img {
   position: relative;
   z-index: 2;
-  width: 100%; /* Increased from 80% */
-  transform: rotate(-5deg); /* Slight tilt maybe? Screenshot looks straight/slightly angled 3D box */
-  /* The image source itself might be 3D. */
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.main-img:hover {
+  transform: scale(1.02);
 }
 
 /* Text Section Styling */
 .text-section {
-  padding-left: 0;
-  margin-left: -10px; /* Pull text to the left as requested */
+  padding-left: 30px;
 }
 
 .sub-title {
-  color: var(--color-grey);
-  font-family: var(--font-barlow);
+  color: var(--theme-color); /* Orange */
+  font-family: var(--font-josefin);
   font-size: 18px;
-  margin-bottom: 10px;
-  font-weight: 500;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .main-title {
-  color: var(--color-blue);
-  font-family: var(--font-baloo);
-  font-weight: 800;
-  font-size: 48px;
-  line-height: 1.1;
+  color: var(--heading-color); /* Dark Blue/Black */
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.2;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .deskripsi p {
-  color: #666;
-  font-family: var(--font-barlow);
+  color: var(--text-color); /* Dark Blue text */
+  font-family: var(--font-poppins);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: 20px;
   text-align: justify;
+  font-weight: 400;
 }
 
 @media (max-width: 991px) {
+  .profil {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   .display-flex {
     flex-direction: column;
   }
   .image-section {
-    margin-bottom: 50px;
-  }
-  .blue-circle-bg {
-    width: 300px;
-    height: 300px;
-    padding-bottom: 0;
+    min-height: auto;
+    margin-bottom: 40px;
+    margin-top: 0;
   }
   .main-title {
     font-size: 32px;
   }
   .text-section {
-    margin-left: 0;
-    padding-left: 15px; /* Restore bootstrap default padding on mobile */
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 </style>

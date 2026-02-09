@@ -1,118 +1,115 @@
 :root {
-    /* Brand Colors from style.css */
-    --color-red: #D00000;
-    --color-red-bright: #FF0000;
-    --color-gold: #FFD60A;
-    --color-gold-dark: #FFC801;
-    /* theme_gold */
-    --color-yellow: #FFC300;
-    --color-blue: #1643A0;
-    --color-blue-dark: #003566;
-    --color-orange: #DF4818;
-    --color-grey: #5A5958;
-    --color-bg-light: #F5F5FA;
+    --theme-color: #ffb300;
+    --theme-color-hover: #e04b00;
+    --text-color: #10285d;
+    /* Dark Blue from Malondindo p tags */
+    --heading-color: #212025;
+    /* Black/Dark Grey from Malondindo headings */
+    --bg-gray: #f7f7fd;
+    --white: #ffffff;
 
-    /* Fonts */
-    --font-baloo: 'Baloo 2', sans-serif;
-    --font-barlow: 'Barlow', sans-serif;
-    --font-barlow-condensed: 'Barlow Condensed', sans-serif;
-
-    /* Spacing */
-    --container-width: 1170px;
-    /* Standard Bootstrap container */
-    --header-height: 90px;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-josefin: 'Josefin Sans', sans-serif;
 }
 
 body {
-    font-family: var(--font-baloo);
-    /* Default from body */
-    color: var(--color-grey);
-    background-color: #fff;
-    line-height: 1.6;
-}
-
-/* Typography mappings based on CSS analysis */
-h1 {
-    font-family: var(--font-baloo);
-    font-weight: 800;
-    /* ExtraBold */
-}
-
-h2 {
-    font-family: var(--font-baloo);
-    font-weight: 700;
-    /* Bold */
-}
-
-h3 {
-    font-family: var(--font-baloo);
-    font-weight: 500;
-    /* Medium or Regular depending on context */
-}
-
-p {
-    font-family: var(--font-barlow);
+    font-family: var(--font-poppins);
+    color: var(--text-color);
+    background-color: var(--white);
+    font-size: 16px;
+    line-height: 30px;
     font-weight: 400;
+    -webkit-font-smoothing: antialiased;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.2s ease;
-}
-
-ul {
-    list-style: none;
-}
-
-/* Utilities */
-.container {
-    /* Bootstrap handles container, but we might want to override max-width if needed */
-    /* max-width: var(--container-width); */
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Custom Utilities */
-.section {
-    padding: 100px 0;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Fix Bootstrap overriding our custom fonts */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-    font-family: var(--font-baloo);
-    color: var(--color-grey);
+h6 {
+    font-family: var(--font-poppins);
+    color: var(--heading-color);
+    font-weight: 600;
+    /* Usually 500 or 600 in Malondindo */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+p {
+    font-family: var(--font-poppins);
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--theme-color);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Utilities */
+.section-padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+/* Buttons */
+.btn-theme {
+    background: var(--theme-color);
+    color: #fff;
+    padding: 15px 44px;
+    /* Adjusted padding */
+    display: inline-block;
+    font-family: var(--font-poppins);
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.btn-theme:hover {
+    background: var(--theme-color-hover);
+    color: #fff;
+}
+
+.btn-border {
+    border: 1px solid var(--theme-color);
+    color: var(--text-color);
+    background: transparent;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.btn-border:hover {
+    background: var(--theme-color);
+    color: #fff;
 }

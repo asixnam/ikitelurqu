@@ -1,30 +1,32 @@
 <template>
-  <div class="produk">
+  <div class="produk section-padding">
     <div class="container">
-       <div class="title_produk">
-          <h3>Pilih sesuai dengan kebutuhanmu</h3>
-          <h2>Pilihan produk Iki TelurQu</h2>
+       <div class="section-title text-center mb-50">
+          <span class="sub-title">Pilih sesuai kebutuhanmu</span>
+          <h2>Pilihan Produk Iki TelurQu</h2>
        </div>
 
-       <div class="list_produk">
-          <div class="row">
-             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mb-30" v-for="(product, i) in products" :key="i">
-                <div class="box_label_produk">
-                   <div :class="['label_produk', product.bgClass]">
-                      <h3>{{ product.name }}</h3>
-                   </div>
-                   <div class="img_produk">
-                      <img :src="product.img" class="img-responsive" alt="Image">
-                   </div>
-                   <div class="deskripsi_produk">
-                      <hr>
-                      <div class="row info-grid">
-                         <div class="col-xs-6 mb-10" v-for="(detail, k) in product.details" :key="k">
-                            <div class="icon_pack">
-                               <p>{{ detail }}</p>
-                            </div>
-                         </div>
+       <div class="row">
+          <div class="col-md-4 col-sm-6 mb-30" v-for="(product, i) in products" :key="i">
+             <div class="product-card">
+                <div class="product-header" :class="product.colorClass">
+                   <h3>{{ product.name }}</h3>
+                </div>
+                
+                <div class="product-img">
+                   <img :src="product.img" class="img-responsive" :alt="product.name">
+                </div>
+                
+                <div class="product-body">
+                   <div class="specs-grid">
+                      <div class="spec-item" v-for="(detail, k) in product.details" :key="k">
+                         <span class="icon"><i class="glyphicon glyphicon-ok-sign"></i></span>
+                         <span class="text">{{ detail }}</span>
                       </div>
+                   </div>
+                   
+                   <div class="action-btn text-center mt-30">
+                      <NuxtLink to="/products" class="btn-border">Lihat Detail</NuxtLink>
                    </div>
                 </div>
              </div>
@@ -38,85 +40,121 @@
 const products = [
   {
     name: 'Kemasan Ecer',
-    bgClass: 'bg_label_produk_yellow',
+    colorClass: 'theme-orange',
     img: 'https://ikitelurqu.com/asset_front/img/produk/iki_telurqu_ecer.png',
-    details: ['Kemasan ecer', '4 & 5 butir', '1 pack', 'Rasa Bacem']
+    details: ['Isi 4 & 5 butir', 'Kemasan Ecer', 'Min. 1 pack', 'Rasa Bacem Khas']
   },
   {
     name: 'Kemasan Display',
-    bgClass: 'bg_label_produk_orange',
+    colorClass: 'theme-orange',
     img: 'https://ikitelurqu.com/asset_front/img/produk/iki_telurqu_display%203_1.png',
-    details: ['Kemasan ecer', '4 & 5 butir', '15 pack', 'Rasa Bacem']
+    details: ['Isi 4 & 5 butir', 'Kemasan Display', 'Isi 15 pack', 'Rasa Bacem Khas']
   },
   {
     name: 'Kemasan Premium',
-    bgClass: 'bg_label_produk_red',
+    colorClass: 'theme-orange',
     img: 'https://ikitelurqu.com/asset_front/img/produk/iki_telurqu%20premium2_1.png',
-    details: ['Kemasan ecer', '5 butir', '5 pack', 'Rasa Bacem']
+    details: ['Isi 5 butir', 'Kemasan Premium', 'Isi 5 pack', 'Rasa Bacem Khas']
   }
 ]
 </script>
 
 <style scoped>
 .produk {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  background-color: var(--color-bg-light);
+  background-color: var(--white);
 }
 
-.title_produk {
-  padding-bottom: 80px;
-  text-align: center;
+.sub-title {
+  color: var(--theme-color);
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.title_produk h3 { margin: 0; color: var(--color-grey); }
-.title_produk h2 { margin: 0; color: var(--color-blue); font-family: var(--font-baloo); font-weight: 700; }
+.section-title h2 {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--heading-color);
+  margin-top: 5px;
+}
 
-.box_label_produk {
-  background: white;
-  border-radius: 10px;
-  box-shadow: -1px 8px 12px -4px rgba(105,105,105,0.2);
-  padding-bottom: 20px;
+.product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
   overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
 }
 
-.label_produk { padding: 20px; }
-.label_produk h3 { color: white; margin: 0; text-align: center; font-family: var(--font-baloo); font-weight: 700; }
-
-.bg_label_produk_yellow { background-color: var(--color-yellow); }
-.bg_label_produk_orange { background-color: var(--color-orange); }
-.bg_label_produk_red { background-color: var(--color-red); }
-
-.img_produk {
-  height: 300px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.product-card:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-color: transparent;
+  transform: translateY(-5px);
 }
 
-.img_produk img {
-  max-height: 100%;
-  max-width: 80%;
-}
-
-.deskripsi_produk { padding: 0 30px; }
-.deskripsi_produk hr { border-top: 2px solid var(--color-grey); margin: 20px 0; }
-
-.icon_pack p {
-  font-family: var(--font-baloo);
-  margin: 0;
+.product-header {
+  padding: 15px;
   text-align: center;
-  font-size: 14px;
+  background: var(--bg-gray);
 }
 
-.mb-30 { margin-bottom: 30px; }
-.mb-10 { margin-bottom: 15px; }
-.info-grid {
-    display: flex;
-    flex-wrap: wrap;
+.product-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--heading-color);
 }
-.col-xs-6 {
-    width: 50%;
+
+.product-header.theme-orange h3 {
+  color: var(--theme-color);
 }
+
+.product-img {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #fff;
+}
+
+.product-img img {
+  max-height: 100%;
+  max-width: 100%;
+  transition: transform 0.3s;
+}
+
+.product-card:hover .product-img img {
+  transform: scale(1.05);
+}
+
+.product-body {
+  padding: 0 25px 30px;
+}
+
+.specs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+}
+
+.spec-item {
+  width: 50%;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.spec-item .icon {
+  color: var(--theme-color);
+  margin-right: 8px;
+}
+
+.mt-30 { margin-top: 30px; }
 </style>

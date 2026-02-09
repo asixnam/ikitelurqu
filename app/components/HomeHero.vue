@@ -1,33 +1,29 @@
 <template>
-  <div class="header_page">
+  <div class="header_page section-padding">
     <div class="container">
-      <div class="row header-content">
-        <!-- Image Left (Desktop) or Top (Mobile) - original has col-md-6 order? 
-             Actually original source: 
-             col-md-6 img (left)
-             col-md-6 text (right)
-        -->
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-           <div class="header_img">
-              <!-- Using original image URL if available or placeholder -->
-              <img src="/header.png" class="img-responsive" alt="Image">
-           </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="row align-items-center">
+        <!-- Text Left -->
+        <div class="col-md-6 col-lg-6 mb-50">
            <div class="header_text">
-              <h3>Pertama di Indonesia</h3>
+              <span class="sub-title">Pertama di Indonesia</span>
               <h1>Iki TelurQu</h1>
               <h2>Telur puyuh siap santap</h2>
 
               <div class="header_deskripsi">
-                 <p>Iki TelurQu adalah telur puyuh RTE (ready-to-eat) yang diproses dengan teknologi retort sehingga bebas bakteri dan jamur. Produk kami tahan 1 tahun di suhu ruang tanpa bahan pengawet tambahan. Terbuat dari 100% telur puyuh pilihan dan diolah dengan bumbu terbaik untuk menciptakan cita rasa yang lezat.</p>
-                 <p>Cocok dikonsumsi untuk anak-anak dalam masa pertumbuhan sebagai sumber protein bergizi yang lezat dan higienis. Cocok juga untuk oleh-oleh dari jogja karena kemasannya premium dan rasanya enak banget, yang pasti dijamin higenisnya.</p>
+                 <p>Iki TelurQu adalah telur puyuh RTE (ready-to-eat) yang diproses dengan teknologi retort sehingga bebas bakteri dan jamur. Produk kami tahan 3 bulan di suhu ruang tanpa bahan pengawet tambahan.</p>
+                 <p class="hidden-xs">Terbuat dari 100% telur puyuh pilihan dan diolah dengan bumbu terbaik untuk menciptakan cita rasa yang lezat. Cocok dikonsumsi untuk anak-anak dalam masa pertumbuhan.</p>
               </div>
 
-              <div class="button_header">
-                 <a href="/profil" class="btn btn-danger btn-lg">Tentang Iki TelurQu</a>
+              <div class="button_header mt-30">
+                 <NuxtLink to="/profil" class="btn-theme">Tentang Iki TelurQu</NuxtLink>
               </div>
+           </div>
+        </div>
+
+        <!-- Image Right -->
+        <div class="col-md-6 col-lg-6">
+           <div class="header_img text-center">
+              <img src="/header.png" class="img-responsive hero-img" alt="Iki TelurQu Hero Image">
            </div>
         </div>
       </div>
@@ -37,81 +33,91 @@
 
 <style scoped>
 .header_page {
-  /* Padding top to account for absolute header if needed, but original likely had separate spacing */
-  padding-top: 110px; 
+  background: #f7f7fd url('/bg-hero.png') no-repeat right top; /* Optional background pattern */
+  background-size: contain; 
 }
 
-.header_img img {
-  width: 100%;
+/* Vertical Align Helper for Bootstrap 3 if flex not available, 
+   but we added align-items-center which needs flex. 
+   If bootstrap 3, we might need manual css for flex 
+*/
+.row.align-items-center {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.header_text {
-  text-align: left;
-}
-
-.header_text h3 {
-  margin: 0px;
-  font-family: var(--font-baloo); /* Regular */
-  font-weight: 400;
-  font-size: 28px;
-  color: var(--color-grey);
+.sub-title {
+  color: var(--theme-color);
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .header_text h1 {
-  margin: 0px;
-  color: var(--color-blue); /* #1643A0 */
-  font-family: var(--font-baloo);
-  font-weight: 800; /* ExtraBold */
-  font-size: 65px;
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 60px;
   line-height: 1.1;
+  color: var(--heading-color);
+  margin-bottom: 10px;
 }
 
 .header_text h2 {
-  margin: 0px;
-  font-family: var(--font-baloo);
-  font-weight: 500; /* Medium */
-  font-size: 40px;
-  color: var(--color-grey);
+  font-family: var(--font-josefin);
+  font-weight: 400;
+  font-size: 32px;
+  color: var(--text-color);
+  margin-bottom: 25px;
 }
 
 .header_deskripsi p {
-  font-family: var(--font-barlow);
-  font-size: 20px;
-  text-align: justify;
-  padding-top: 20px;
-  color: var(--color-grey);
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 15px;
 }
 
-.button_header {
-  padding-top: 10px;
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  animation: float 6s ease-in-out infinite;
 }
 
-.btn-danger {
-  background-color: var(--color-red);
-  color: white;
-  padding: 10px 30px;
-  border-radius: 4px;
-  font-size: 1.2rem;
-  font-family: var(--font-baloo);
-  border: none;
-  cursor: pointer;
-  display: inline-block;
+@keyframes float {
+	0% { transform: translatey(0px); }
+	50% { transform: translatey(-20px); }
+	100% { transform: translatey(0px); }
 }
 
-.btn-danger:hover {
-  background-color: var(--color-red-bright);
-}
-
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .header_page {
     text-align: center;
+    padding-top: 100px; /* Space for fixed header */
   }
+  
   .header_text {
-    margin-top: 30px;
-    text-align: center;
+    margin-bottom: 40px;
   }
+
   .header_text h1 {
-    font-size: 48px;
+    font-size: 42px;
+  }
+
+  .header_text h2 {
+    font-size: 24px;
+  }
+  
+  .row.align-items-center {
+    display: block; /* Stack on mobile */
+  }
+
+  .button_header {
+    margin-bottom: 30px;
   }
 }
 </style>
