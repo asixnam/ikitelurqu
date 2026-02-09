@@ -3,7 +3,6 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-
           <span class="sub-title">Mudah Didapat</span>
           <h2>Dapatkan di Toko Langgananmu</h2>
           <p class="section-desc">Tersedia secara online maupun offline di berbagai supermarket dan toko oleh-oleh.</p>
@@ -26,7 +25,7 @@
              <iframe 
                src="https://www.google.com/maps/d/embed?mid=1HM8rtZHEhK-dG8Xxb679wWXJTeboWVA&ehbc=2E312F" 
                width="100%" 
-               height="480"
+               height="500"
                style="border:0;"
                allowfullscreen=""
                loading="lazy">
@@ -64,8 +63,35 @@ const copyLink = async () => {
 
 <style scoped>
 .maps-container {
-  padding: 40px 0;
+  padding: 80px 0; /* Increased padding */
   background: #fff;
+}
+
+.sub-title {
+  color: var(--theme-color);
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--heading-color);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.section-desc {
+  color: #666;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
 }
 
 .share-title {
@@ -80,7 +106,7 @@ const copyLink = async () => {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .share-btn {
@@ -117,14 +143,46 @@ const copyLink = async () => {
 }
 
 .map-wrapper {
-  border-radius: 15px;
+  border-radius: 5px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   background: #eee;
+  height: 500px;
 }
 
 .map-wrapper iframe {
   display: block; /* Removes bottom space of iframe */
+  height: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+  .maps-container {
+    padding: 100px 0;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  .section-desc {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  
+  .share-buttons {
+    gap: 10px;
+  }
+  
+  .share-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .map-wrapper {
+    height: 350px;
+  }
 }
 
 </style>
