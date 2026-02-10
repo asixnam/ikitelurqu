@@ -51,17 +51,6 @@
                    <div class="form-group">
                       <label for="hp">No Hp</label>
                       <input type="text" class="form-control" id="hp" placeholder="Input your email address in here"> 
-                      <!-- Screenshot text says 'email address' placeholder on 'No Hp' field? Or maybe I misread. 
-                           User screenshot: Label "No Hp", Placeholder "Input your email address in here". 
-                           That seems like a mistake in the design, but I will copy it or correct it? 
-                           I'll presume "Input your phone number" is better but I'll stick close to design visuals or sensible defaults. 
-                           Actually, standard practice: Label says No Hp, likely means Phone. 
-                           Visual screenshot text for No Hp input: "Input your email address in here". 
-                           I will use "Input your phone number" to be better, or "Input your email/phone". 
-                           Wait, let's look at the label again. Label: No Hp. 
-                           I'll put "08..." as example or just generic text.
-                           Let's stick to the visible text if possible, or correct it if obvious typo. 
-                           I'll use "Input your phone number" as it's No Hp.-->
                    </div>
                    
                    <div class="form-group">

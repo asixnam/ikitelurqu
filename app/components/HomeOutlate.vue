@@ -14,12 +14,22 @@
 
        <div class="list_swalayan">
            <h4 class="text-center mb-30">Supermarket & Toko Oleh-oleh</h4>
-           <div class="row market-grid">
-               <div class="col-xs-4 col-sm-3 mb-20" v-for="(item, i) in swalayan" :key="i">
-                  <div class="market-box small">
-                     <img :src="item.img" class="img-responsive" alt="Outlet Partner">
-                  </div>
-               </div>
+           
+           <div class="marquee-container">
+             <div class="marquee-track">
+                <!-- Original Set -->
+                <div class="marquee-item" v-for="(item, i) in swalayan" :key="'a-'+i">
+                    <div class="market-box small">
+                        <img :src="item.img" class="img-responsive" alt="Outlet Partner">
+                    </div>
+                </div>
+                <!-- Duplicate Set for Seamless Loop -->
+                <div class="marquee-item" v-for="(item, i) in swalayan" :key="'b-'+i">
+                    <div class="market-box small">
+                        <img :src="item.img" class="img-responsive" alt="Outlet Partner">
+                    </div>
+                </div>
+             </div>
            </div>
            
            <div class="text-center mt-40">
@@ -87,6 +97,7 @@ h4 {
   height: 100px; /* Fixed height for consistency */
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
+  width: 100%; /* Fill container */
 }
 
 .market-box:hover {
@@ -98,11 +109,49 @@ h4 {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  /* Remove individual slide effect if Marquee is moving, or keep it for hover interaction */
+  transition: transform 0.3s ease;
+}
+
+.market-box:hover img {
+  transform: scale(1.05); /* Just scale on hover */
 }
 
 .market-box.small {
   height: 80px;
   padding: 10px;
+}
+
+/* Marquee Styles */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  width: 150px; /* Adjust based on desired logo size */
+  margin-right: 20px;
+  display: inline-block;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pause animation on hover */
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 
 .btn-theme {

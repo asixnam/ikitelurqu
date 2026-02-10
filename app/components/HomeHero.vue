@@ -1,30 +1,38 @@
 <template>
-  <div class="header_page section-padding">
+  <div class="header_page">
     <div class="container">
       <div class="row align-items-center">
         <!-- Text Left -->
         <div class="col-md-6 col-lg-6 mb-50">
-           <div class="header_text">
-              <span class="sub-title">Pertama di Indonesia</span>
-              <h1>Iki TelurQu</h1>
-              <h2>Telur puyuh siap santap</h2>
+          <div class="header_text">
+            <span class="sub-title">IKI TELURQU</span>
+            <h1 class="hero-title">Telur Puyuh Siap Santap untuk Keluarga Aktif</h1>
 
-              <div class="header_deskripsi">
-                 <p>Iki TelurQu adalah telur puyuh RTE (ready-to-eat) yang diproses dengan teknologi retort sehingga bebas bakteri dan jamur. Produk kami tahan 3 bulan di suhu ruang tanpa bahan pengawet tambahan.</p>
-                 <p class="hidden-xs">Terbuat dari 100% telur puyuh pilihan dan diolah dengan bumbu terbaik untuk menciptakan cita rasa yang lezat. Cocok dikonsumsi untuk anak-anak dalam masa pertumbuhan.</p>
-              </div>
+            <div class="header_deskripsi">
+              <p>
+                Solusi Praktis Setiap Hari. Lezat dan praktis, produk ini adalah
+                pilihan tepat untuk bekal kantor, camilan santai, hingga lauk
+                harian keluarga. Cukup sajikan dalam sekejap untuk menikmati
+                rasa autentik yang memanjakan lidah di setiap suasana sibukmu.
+              </p>
+            </div>
 
-              <div class="button_header mt-30">
-                 <NuxtLink to="/profil" class="btn-theme">Tentang Iki TelurQu</NuxtLink>
-              </div>
-           </div>
+            <div class="button_header mt-4">
+              <NuxtLink to="https://shopee.co.id/ikienak" class="btn-theme">Beli Sekarang</NuxtLink>
+              <NuxtLink to="/varian" class="btn-border">Pilih Varian</NuxtLink>
+            </div>
+          </div>
         </div>
 
         <!-- Image Right -->
         <div class="col-md-6 col-lg-6">
-           <div class="header_img text-center">
-              <img src="/header.png" class="img-responsive hero-img" alt="Iki TelurQu Hero Image">
-           </div>
+          <div class="header_img text-center">
+            <img
+              src="/hero.png"
+              class="img-fluid hero-img"
+              alt="Iki TelurQu Keluarga"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -33,91 +41,93 @@
 
 <style scoped>
 .header_page {
-  background: #f7f7fd url('/bg-hero.png') no-repeat right top; /* Optional background pattern */
-  background-size: contain; 
-}
-
-/* Vertical Align Helper for Bootstrap 3 if flex not available, 
-   but we added align-items-center which needs flex. 
-   If bootstrap 3, we might need manual css for flex 
-*/
-.row.align-items-center {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  background: var(--bg-gray); /* Use variable for consistency */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 60px;
+  padding-bottom: 1px;
 }
 
 .sub-title {
   color: var(--theme-color);
   font-family: var(--font-poppins);
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 16px; /* Adjusted size */
+  text-transform: uppercase; /* Uppercase for subtitle style */
+  letter-spacing: 2px; /* Added letter spacing */
   display: block;
+  margin-top: 80px;
   margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-.header_text h1 {
+.hero-title {
   font-family: var(--font-poppins);
   font-weight: 700;
-  font-size: 60px;
-  line-height: 1.1;
-  color: var(--heading-color);
-  margin-bottom: 10px;
-}
-
-.header_text h2 {
-  font-family: var(--font-josefin);
-  font-weight: 400;
-  font-size: 32px;
+  font-size: 48px;
+  line-height: 1.3;
   color: var(--text-color);
   margin-bottom: 25px;
 }
 
 .header_deskripsi p {
   color: var(--text-color);
-  font-size: 16px;
-  line-height: 28px;
-  margin-bottom: 15px;
+  font-size: 18px; /* Slightly larger for readability */
+  line-height: 1.8;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
+
+.button_header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .hero-img {
   max-width: 100%;
   height: auto;
+  margin-top: -50px; /* Pull image up */
+  position: relative;
+  z-index: 1;
   animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1)); /* Add depth */
 }
 
+/* Animations */
 @keyframes float {
-	0% { transform: translatey(0px); }
-	50% { transform: translatey(-20px); }
-	100% { transform: translatey(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
+/* Responsive */
 @media (max-width: 991px) {
   .header_page {
     text-align: center;
-    padding-top: 100px; /* Space for fixed header */
-  }
-  
-  .header_text {
-    margin-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
-  .header_text h1 {
-    font-size: 42px;
+  .hero-title {
+    font-size: 32px;
   }
 
-  .header_text h2 {
-    font-size: 24px;
-  }
-  
-  .row.align-items-center {
-    display: block; /* Stack on mobile */
+  .header_deskripsi p {
+    font-size: 16px;
   }
 
   .button_header {
-    margin-bottom: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .hero-img {
+      max-width: 80%; /* Smaller image on mobile */
   }
 }
 </style>

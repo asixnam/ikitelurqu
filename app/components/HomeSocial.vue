@@ -7,17 +7,25 @@
         </div>
 
         <div class="box_feed">
-           <!-- Placeholder for Elfsight or actual feed -->
-           <div class="text-center" style="background: #f9f9f9; padding: 50px; border-radius: 10px;">
-               <p>Instagram Feed Widget Area</p>
-               <a href="https://www.instagram.com/ikitelurqu/" target="_blank" class="btn btn-primary">Visit Instagram</a>
-               <!-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-               <div class="elfsight-app-1e154510-db87-4079-a5a5-b0f6b1c34eea" data-elfsight-app-lazy></div> -->
-           </div>
+           <div class="elfsight-app-1e154510-db87-4079-a5a5-b0f6b1c34eea" data-elfsight-app-lazy></div>
         </div>
      </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useHead } from '#imports'
+
+useHead({
+  script: [
+    {
+      src: 'https://static.elfsight.com/platform/platform.js',
+      'data-use-service-core': true,
+      defer: true
+    }
+  ]
+})
+</script>
 
 <style scoped>
 .feed_sosial_media {

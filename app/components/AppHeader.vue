@@ -17,23 +17,23 @@
             <ul>
               <li><NuxtLink to="/" exact-active-class="active">Beranda</NuxtLink></li>
               <li><NuxtLink to="/profil" active-class="active">Profil</NuxtLink></li> <!-- Changed from Detail Produk to Profil to match Malond -->
-              <li><NuxtLink to="/products" active-class="active">Produk</NuxtLink></li> <!-- Added Products dropdown placeholder if needed -->
-              <li><NuxtLink to="/blog" active-class="active">Blog</NuxtLink></li>
-              <li><NuxtLink to="/outlet" active-class="active">Outlet</NuxtLink></li>
+              <li><NuxtLink to="/varian" active-class="active">Varian</NuxtLink></li>
+              <li><NuxtLink to="/promo" active-class="active">Promo</NuxtLink></li>
+              <li><NuxtLink to="/outlet" active-class="active">Outlate</NuxtLink></li>
             </ul>
           </nav>
         </div>
 
         <!-- Call to Action (Desktop) -->
         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs text-right">
-           <a href="https://api.whatsapp.com/send?phone=6281332614978" target="_blank" class="header-btn">
+           <a href="https://shopee.co.id/ikienak" target="_blank" class="header-btn">
               <i class="glyphicon glyphicon-shopping-cart"></i> Order Online
            </a>
         </div>
 
         <!-- Mobile Top Right Action -->
         <div class="col-sm-8 col-xs-6 text-right visible-sm visible-xs">
-           <a href="https://api.whatsapp.com/send?phone=6281332614978" target="_blank" class="mobile-top-btn">
+           <a href="https://shopee.co.id/ikienak" target="_blank" class="mobile-top-btn">
               <i class="glyphicon glyphicon-shopping-cart"></i>
            </a>
         </div>
@@ -52,7 +52,7 @@
         </NuxtLink>
         
         <div class="nav-item center-item">
-             <a href="https://api.whatsapp.com/send?phone=6281332614978" target="_blank" class="order-fab">
+             <a href="https://shopee.co.id/ikienak" target="_blank" class="order-fab">
                 <i class="glyphicon glyphicon-shopping-cart"></i>
              </a>
         </div>

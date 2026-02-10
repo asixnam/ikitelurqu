@@ -1,14 +1,14 @@
 <template>
   <div class="page-home">
     <HomeHero />
-    <HomeLegalitas />
+    <!-- <HomeLegalitas /> -->
   
     
-    <HomeFeatures /> <!-- Latarbelakang -->
+    <HomeKeunggulan /> <!-- Latarbelakang -->
     
-    <HomeKandungan />
+    <HomeMoment />
 
-    <HomeJogja /> <!-- New Story Section -->
+    <HomeVarian /> <!-- New Story Section -->
     
     <!-- <HomeProfil />  -->
     
@@ -20,7 +20,7 @@
     
     <HomeCarousel /> <!-- Slide Momen -->
     
-    <HomeCombo /> <!-- Kombo Makanan -->
+    <!-- <HomeCombo />  -->
     
     <HomeTestimonials /> <!-- Testimoni -->
     

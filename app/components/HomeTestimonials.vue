@@ -13,12 +13,23 @@
            </div>
         </div>
 
-        <div class="row">
-           <div class="col-md-3 col-sm-6 mb-30" v-for="(img, i) in testimoniImgs" :key="i">
-              <div class="testimoni-card">
-                 <div class="card-img">
-                    <img :src="img" alt="Testimoni Customer" class="img-responsive">
-                 </div>
+        <div class="marquee-container">
+           <div class="marquee-track">
+              <!-- Original Set -->
+              <div class="marquee-item" v-for="(img, i) in testimoniImgs" :key="'a-'+i">
+                  <div class="testimoni-card">
+                     <div class="card-img">
+                        <img :src="img" alt="Testimoni Customer" class="img-responsive">
+                     </div>
+                  </div>
+              </div>
+              <!-- Duplicate Set for Seamless Loop -->
+              <div class="marquee-item" v-for="(img, i) in testimoniImgs" :key="'b-'+i">
+                  <div class="testimoni-card">
+                     <div class="card-img">
+                        <img :src="img" alt="Testimoni Customer" class="img-responsive">
+                     </div>
+                  </div>
               </div>
            </div>
         </div>
@@ -59,10 +70,33 @@ const testimoniImgs = [
 .star-rating {
   color: #ffc107;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .star-rating i {
   margin: 0 2px;
+}
+
+/* Marquee Styles */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  width: 300px; /* Adjust based on card size */
+  margin-right: 30px;
+  display: inline-block;
 }
 
 .testimoni-card {
@@ -85,6 +119,16 @@ const testimoniImgs = [
   display: block;
 }
 
-.mb-30 { margin-bottom: 30px; }
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pause animation on hover */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.mb-50 { margin-bottom: 50px; }
 .mt-20 { margin-top: 20px; }
 </style>
